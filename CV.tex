@@ -1,0 +1,291 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[vmargin=1.5cm, hmargin=1.5cm]{geometry}
+%-------------------------------------------------------------------------------------------------------
+% Packages
+%-------------------------------------------------------------------------------------------------------
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{fontawesome}
+\usepackage{datetime}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[colorlinks=true, urlcolor=ColorTwo]{hyperref}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{sectsty}
+\usepackage{multicol}
+\usepackage{adjustbox}
+%-------------------------------------------------------------------------------------------------------
+% Layout
+%-------------------------------------------------------------------------------------------------------
+\pagenumbering{gobble}
+\renewcommand{\baselinestretch}{1.5} 
+\setlength{\parindent}{0pt}
+
+%
+% Color theme
+%
+\definecolor{ColorOne}{RGB}{0,110,140}
+\definecolor{ColorTwo}{RGB}{128, 0, 128}
+
+\sectionfont{\color{ColorOne}} 
+\subsectionfont{\color{ColorOne}} 
+
+%
+% Vertical line
+%
+\newcommand{\MyVerticalRule}{%
+	\textcolor{ColorOne}{\rule{1pt}{\textheight}}
+}
+
+%
+% Update
+%
+\newcommand{\LastUpdate}{%
+\vfill
+\centering \small
+\textcolor{ColorOne}{Last updated: \monthname,~\the\year.}
+}
+
+%
+% Skip
+%
+\newcommand{\MySkip}{
+\vskip12pt
+}
+
+%
+% Format hyperrefs
+%
+\newcommand{\myhref}[2]{%
+\href{#1}{\textcolor{ColorTwo}{#2}}
+}
+%
+% Format skill bullets
+%
+\newcommand{\SkillBull}[1]{%
+\textcolor{ColorTwo}{#1}
+}
+%-------------------------------------------------------------------------------------------------------
+
+\begin{document}
+\thispagestyle{empty}
+
+%-------------------------------------------------------------------------------------------------------
+% Left column
+%-------------------------------------------------------------------------------------------------------
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.3\textwidth} % Adapt width to your convenience
+%----------------------------------------------------
+% Please add a photo in 1x1 format
+\begin{center}
+\begin{tikzpicture}
+	\clip (0,0) circle (2cm) node {\includegraphics[width=4cm]{Photo}};
+\end{tikzpicture}
+
+\MySkip 	% See MySetup.tex file
+
+%----------------------------------------------------
+{\LARGE \bfseries Francesco Stucci}
+
+\MySkip 	% See MySetup.tex file
+
+Born on August 5th, 1996\\
+Genoa -- Italy\\
+
+\MySkip 	% See MySetup.tex file
+\textcolor{ColorTwo}{\faPhone} 
+\myhref{tel:3890298501}{389 02 98 501} \\
+
+\textcolor{ColorTwo}{\faEnvelopeO} 
+\myhref{mailto:francestu96@gmail.com}{francestu96@gmail.com} \\
+
+\textcolor{ColorTwo}{\faChain} 
+\myhref{https://github.com/francestu96}{https://github.com/francestu96}
+\end{center}
+
+\vfill
+
+\section*{Education}
+	\begin{description}
+	\raggedright
+	\item \textcolor{ColorOne}{\textbf{Software Security Master}}\\
+	\textbf{2019 - 2021}\\
+	Universit\`a di Genova\\
+	Genoa -- Italy\\
+	110/110 with honors
+
+	\item \textcolor{ColorOne}{\textbf{Computer Science Bachelor}}\\
+	\textbf{2015 - 2018}\\
+	Universit\`a di Genova\\
+	Genoa -- Italy\\
+	110/110 with honors
+
+	\item \textcolor{ColorOne}{\textbf{Technical School Diploma}}\\
+	\textbf{2010 - 2015}\\
+	Italo Calvino High School\\
+	Genoa -- Italy\\
+	66/100
+\end{description}
+
+\vfill
+
+%----------------------------------------------------
+
+\end{minipage}
+\end{adjustbox}
+%
+%
+%-------------------------------------------------------------------------------------------------------
+% Vertical rule
+%-------------------------------------------------------------------------------------------------------
+%
+\hfill
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.05\textwidth} % Adapt width to your convenience
+\MyVerticalRule  % See MySetup.tex file
+\end{minipage}
+\end{adjustbox}
+\hfill
+%
+%-------------------------------------------------------------------------------------------------------
+% Right column
+%-------------------------------------------------------------------------------------------------------
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.6\textwidth} % Adapt width to your convienience
+\section*{Current situation}
+\begin{description}
+\raggedright
+\item[\normalfont \textcolor{ColorOne}{Sep. 2021}] \textbf{Leonardo S.P.A.}, Genoa\\ \medskip
+
+\textbf{Software Security Architect}\\
+
+I use to study and implement security mechanisms for \textbf{critical infrastructures}.\\
+Currently, I'm working on the data protection systems of a customer. In particular, I've been involved in the \textbf{analysis of its security requirements and in the solutions integration}. These includes centralized \textbf{anti-malware systems}, \textbf{two factor authentication}, \textbf{HSM} as well as make all the \textbf{network traffic encrypted}.\\
+
+\end{description}
+
+%----------------------------------------------------
+\section*{Experience}
+\begin{description}
+\raggedright
+\item[\normalfont \textcolor{ColorOne}{Sep. 2018 -- Sep. 2021.}] 
+	\textbf{Horsa Devlab}, Genoa\\ \medskip
+	
+	\textbf{Full-Stack Web Developer}\\
+	
+	Assigned to develop management applications both \textbf{Front-end} and \textbf{Back-end}.\\
+    The software I was working on deals with the management of orders, stocks, products, tests and specifications of a pharmaceutical industry. The application uses \textbf{Angular} for client-side interface management and \textbf{.NET Core} for server-side API management using the ASP.NET MVC pattern.\\
+    The system relies on a \textbf{SQL Server} database.\\
+    From this experience I've learned how World Wide Web really works in depth and I've improved a lot my programming skills. 
+\end{description}
+
+\begin{multicols}{2}
+\section*{Programming}
+\begin{tabular}{ll}
+	C\# 			& \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	TypeScript  	& \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	JavaScript  	& \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	Python   	    & \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	Bash/Shell    & \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	PHP  		    & \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+	SQL 		    & \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+	C/C++        	& \SkillBull{$\bullet \bullet \circ \, \circ$}\\
+	Java        	& \SkillBull{$\bullet \bullet \circ \, \circ$}\\
+\end{tabular}
+
+\vfill\null \columnbreak  % Break column for new section
+
+\section*{Technical Knowledge}
+\begin{tabular}{ll}
+    Unix-like env	    & \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	.NET		& \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+	Angular  	& \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+	Azure/AWS		& \SkillBull{$\bullet \bullet \circ \, \circ$}\\
+	Entity Framework 	& \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+	MySQL, SQL-Server   & \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	MongoDB   	    & \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+	Android development   	    & \SkillBull{$\bullet \bullet \circ \, \circ$}\\
+	TCP/IP stanadard	    & \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	Network protocols	    & \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+	Docker	    & \SkillBull{$\bullet \bullet \circ \, \circ$}\\
+	Virtual environments	    & \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+\end{tabular}
+\end{multicols}
+\end{minipage}
+\end{adjustbox}
+
+%-------------------------------------------------------------------------------------------------------
+% New Page
+%-------------------------------------------------------------------------------------------------------
+\newpage
+\thispagestyle{empty}
+
+%-------------------------------------------------------------------------------------------------------
+% Left column
+%-------------------------------------------------------------------------------------------------------
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.3\textwidth} % Adapt width to your convenience
+
+\section*{Languages}
+\begin{tabular}{ll}
+    Italian	    & \SkillBull{$\bullet \bullet \bullet \, \bullet$}\\
+	English		& \SkillBull{$\bullet \bullet \bullet \, \circ$}\\
+	German		& \SkillBull{$\bullet \circ \circ \, \circ$}\\
+\end{tabular}
+
+\vfill
+%----------------------------------------------------
+
+\section*{Scientific interests}
+\raggedright
+\textcolor{ColorOne}{$\circ$} Blockchain\\
+\textcolor{ColorOne}{$\circ$} Smart Contract development\\
+\textcolor{ColorOne}{$\circ$} Automated Trading Strategies\\
+\textcolor{ColorOne}{$\circ$} Capture The Flag competitions
+
+\vfill
+
+%----------------------------------------------------
+
+\end{minipage}
+\end{adjustbox}
+%
+%
+%-------------------------------------------------------------------------------------------------------
+% Vertical rule
+%-------------------------------------------------------------------------------------------------------
+%
+\hfill
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.05\textwidth} % Adapt width to your convenience
+\MyVerticalRule  % See MySetup.tex file
+\end{minipage}
+\end{adjustbox}
+\hfill
+%
+%-------------------------------------------------------------------------------------------------------
+% Right column
+%-------------------------------------------------------------------------------------------------------
+\begin{adjustbox}{valign=t}
+\begin{minipage}{0.6\textwidth} % Adapt width to your convienience
+\section*{Further information}
+\begin{description}
+	\raggedright
+	\item \textcolor{ColorOne}{Mar. 2021}\\
+	Scholarship winner of \textbf{Leonardo-UniGe Cybersecurity Scholarship Program 2020/2021}\\
+    (award video: \myhref{https://www.youtube.com/watch?v=gA4rcqAIaZg}{Leonardo-UniGe Cybersecurity Scholarship})
+    \item \textcolor{ColorOne}{Jul. 2018}\\
+    First Certificate in English which certifies CERF \textbf{B2 level}
+    \item \textcolor{ColorOne}{Oct. 2016}\\
+    Abroad study experience of \textbf{six months} through the \textbf{Erasmus} program (Germany)
+\end{description}
+
+\MySkip
+\end{minipage}
+\end{adjustbox}
+
+\end{document}
